@@ -1,15 +1,25 @@
 import MeetingTypeList from "@/components/MeetingTypeList";
+import { format, toZonedTime } from "date-fns-tz";
 
 const Home = () => {
-  const now = new Date();
+  // const now = new Date();
 
-  const time = now.toLocaleTimeString("en-IN", {
-    hour: "2-digit",
-    minute: "2-digit",
+  // const time = now.toLocaleTimeString("en-IN", {
+  //   hour: "2-digit",
+  //   minute: "2-digit",
+  // });
+  // const date = new Intl.DateTimeFormat("en-IN", { dateStyle: "full" }).format(
+  //   now
+  // );
+  const timeZone = "Asia/Kolkata"; // Specify your desired timezone
+
+  const now = new Date();
+  const zonedDate = toZonedTime(now, timeZone);
+
+  const time = format(zonedDate, "hh:mm a", { timeZone: "Asia/Kolkata" });
+  const date = format(zonedDate, "EEEE, MMMM do, yyyy", {
+    timeZone: "Asia/Kolkata",
   });
-  const date = new Intl.DateTimeFormat("en-IN", { dateStyle: "full" }).format(
-    now
-  );
 
   return (
     <section className="flex size-full flex-col gap-5 text-white">
