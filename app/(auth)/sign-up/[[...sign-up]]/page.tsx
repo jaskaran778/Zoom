@@ -3,7 +3,11 @@ import { SignUp } from "@clerk/nextjs";
 export default function SignUpPage() {
   return (
     <main className="flex h-screen w-full items-center justify-center">
-      <SignUp redirectUrl="/" afterSignUpUrl="/" fallbackRedirectUrl="/" />
+      <SignUp
+        redirectUrl="https://zoom-workplace.vercel.app/"
+        afterSignUpUrl="https://zoom-workplace.vercel.app/"
+        fallbackRedirectUrl="/"
+      />
     </main>
   );
 }
