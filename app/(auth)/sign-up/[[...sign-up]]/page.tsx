@@ -6,7 +6,6 @@ export default function SignUpPage() {
       <SignUp
         redirectUrl="https://zoom-workplace.vercel.app/"
         afterSignUpUrl="https://zoom-workplace.vercel.app/"
-        fallbackRedirectUrl="/"
       />
     </main>
   );
